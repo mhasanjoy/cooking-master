@@ -12,13 +12,14 @@ const displayIngredients = (meal, mealDiv) => {
         ingredientsDiv.innerHTML = `
                 <img src="${meal.strMealThumb}">
                 <h2>${meal.strMeal}</h2>
-                <p>Ingredients</p>
+                <h5>Ingredients</h5>
                 <ul>
                     <li>${meal.strIngredient1}</li>
                     <li>${meal.strIngredient2}</li>
                     <li>${meal.strIngredient3}</li>
                     <li>${meal.strIngredient4}</li>
                     <li>${meal.strIngredient5}</li>
+                    <li>${meal.strIngredient6}</li>
                 </ul>
             `;
             ingredients.appendChild(ingredientsDiv);
