@@ -54,7 +54,7 @@ document.getElementById("search-btn").addEventListener("click", function(){
     .catch(error => {
         const ingredients = ingredientsSection();
         ingredients.innerHTML = `
-            <h1 id="error">Your search - ${searchingText} - did not match any food items.</h1>
+            <h1 id="error">Your search - ${searchingText} - did not match with any food items.</h1>
         `;
     });
 });
