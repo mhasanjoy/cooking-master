@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container mt-3">
+        <nav class="navbar navbar-expand-lg navbar-light fw-bold">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><span class="color-highlight">Cooking master</span></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                    <a class="nav-link" href="#">Recipes</a>
+                  </li>
+                  <li class="nav-item ms-3">
+                    <a class="nav-link" href="#">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <main class="container">
+        <section class="input-group justify-content-center mt-5">
+            <input id="searching-text" type="text" placeholder="Search for Meal...">
+            <button id="search-btn" class="btn btn-outline-secondary" type="button">Search</button>
+        </section>
+        <section class="mt-5 d-flex justify-content-center">
+            <div id="ingredients">
+
+            </div>
+        </section>
+        <section id="meals" class="mt-5 mb-5">
+            
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

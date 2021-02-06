@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(241, 225, 80);
+}
+.color-highlight{
+    color: #3b2d64;
+    font-size: 25px;
+}
+#searching-text{
+    width: 400px;
+}
+#search-btn{
+    background-color: #3b2d64;
+    color: white;
+}
+#meals{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+#meals img{
+    width: 100%;
+}
+.meal, #ingredients{
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+.meal{
+    text-align: center;
+}
+#ingredients{
+    width: 40%;
+}
+#ingredients img{
+    width: 100%;
+}
+#error{
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
