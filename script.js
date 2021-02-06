@@ -48,13 +48,15 @@ const displayMeals = meals => {
 document.getElementById("search-btn").addEventListener("click", function(){
     const searchingText = document.getElementById("searching-text").value;
 
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchingText}`)
-    .then(response => response.json())
-    .then(data => displayMeals(data.meals))
-    .catch(error => {
-        const ingredients = ingredientsSection();
-        ingredients.innerHTML = `
-            <h1 id="error">Your search - ${searchingText} - did not match with any food items.</h1>
-        `;
-    });
+    if(searchingText !== ""){
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchingText}`)
+        .then(response => response.json())
+        .then(data => displayMeals(data.meals))
+        .catch(error => {
+            const ingredients = ingredientsSection();
+            ingredients.innerHTML = `
+                <h1 id="error">Your search - ${searchingText} - did not match with any food items.</h1>
+            `;
+        });
+    }
 });
