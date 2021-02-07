@@ -6,23 +6,31 @@ const ingredientsSection = () => {
 
 
 const displayIngredients = (meal, mealDiv) => {
-    mealDiv.addEventListener("click", function(){
+    mealDiv.addEventListener("click", function () {
         const ingredients = ingredientsSection();
         const ingredientsDiv = document.createElement("div");
         ingredientsDiv.innerHTML = `
                 <img src="${meal.strMealThumb}">
                 <h2>${meal.strMeal}</h2>
                 <h5>Ingredients</h5>
-                <ul>
-                    <li>${meal.strIngredient1}</li>
-                    <li>${meal.strIngredient2}</li>
-                    <li>${meal.strIngredient3}</li>
-                    <li>${meal.strIngredient4}</li>
-                    <li>${meal.strIngredient5}</li>
-                    <li>${meal.strIngredient6}</li>
-                </ul>
             `;
-            ingredients.appendChild(ingredientsDiv);
+
+        // Accessing all the ingredients from the object
+        const ul = document.createElement("ul");
+        for (let i = 1; ; i++) {
+            const ingredientObj = "strIngredient" + i;
+            if (meal[ingredientObj] === "" || meal[ingredientObj] === null) {
+                break;
+            }
+            else {
+                const li = document.createElement("li");
+                li.innerText = meal[ingredientObj];
+                ul.appendChild(li);
+            }
+        }
+        ingredientsDiv.appendChild(ul);
+
+        ingredients.appendChild(ingredientsDiv);
     });
 };
 
@@ -45,18 +53,18 @@ const displayMeals = meals => {
 };
 
 
-document.getElementById("search-btn").addEventListener("click", function(){
+document.getElementById("search-btn").addEventListener("click", function () {
     const searchingText = document.getElementById("searching-text").value;
 
-    if(searchingText !== ""){
+    if (searchingText !== "") {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchingText}`)
-        .then(response => response.json())
-        .then(data => displayMeals(data.meals))
-        .catch(error => {
-            const ingredients = ingredientsSection();
-            ingredients.innerHTML = `
+            .then(response => response.json())
+            .then(data => displayMeals(data.meals))
+            .catch(error => {
+                const ingredients = ingredientsSection();
+                ingredients.innerHTML = `
                 <h1 id="error">Your search - ${searchingText} - did not match with any food items.</h1>
             `;
-        });
+            });
     }
 });
